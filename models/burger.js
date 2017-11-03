@@ -1,11 +1,23 @@
 module.exports = function(sequelize, DataTypes) {
   var Burger = sequelize.define("Burger", {
-    burger_name: DataTypes.STRING,
-    devoured: DataTypes.BOOLEAN,
+    burger_name: {
+      type: DataTypes.STRING
+    },
+    devoured: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
     date: { 
       type: DataTypes.DATE, 
       defaultValue: DataTypes.NOW 
     }
   });
+
+  Burger.associate = function(models) {
+
+    Burger.hasOne(models.Customer, {
+     foreignKey: 'Customer_id'
+    });
+  };
   return Burger;
 };

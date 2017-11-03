@@ -1,7 +1,8 @@
 <li>
   {{burger_name}}
-
-  <button class="eat-burger" data-id="{{id}}" data-status="{{devoured}}" data-burger="{{burger_name}}"> Devour Burger 
-  </button>
-
-</li>
+    <form class="create-form" id="newCustomer" action="/customer/{{id}}" method="post">
+      <input type="text" placeholder="customer?" name="customer" id="{{id}}" class="person" data-status="{{devoured}}" data-burger="{{burger_name}}">
+      <button type="submit" class="eat-burger" data-id="{{id}}"> Devour Burger 
+      </button>
+    </form>
+</li> 

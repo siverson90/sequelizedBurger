@@ -13,7 +13,7 @@ module.exports = function(app) {
     });
   });
 
-  // POST route for saving a new todo. You can create a todo using the data on req.body
+  
   app.post("/api/burgers", function(req, res) {
 
     // console.log(req.body);
@@ -22,15 +22,13 @@ module.exports = function(app) {
       burger_name: req.body.burger_name,
       devoured: req.body.devoured
     }).then(function(result){
-      // console.log(result);
-      res.end();
+      console.log(result);
+      res.json(result);
     });
   });
 
  
    app.put("/api/burgers/:id", function(req, res) {
-      
-
       // console.log(req.body.devoured);
       console.log(req.params.id);
       // console.log(req.body.burger_name);
@@ -50,4 +48,5 @@ module.exports = function(app) {
           }
       });
     });
+
 };
