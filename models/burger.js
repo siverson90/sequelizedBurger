@@ -16,7 +16,6 @@ module.exports = function(sequelize, DataTypes) {
   Burger.associate = function(models) {
 
     Burger.hasOne(models.Customer, {
-     foreignKey: 'Customer_id'
     });
   };
   return Burger;
